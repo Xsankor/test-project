@@ -1,21 +1,36 @@
 
-   
-   
     let money = +prompt('Ваш бюджет на месяц','');
     let time = prompt('YYYY-MM-DD','');
-    let costs = prompt('Введит обязательную статью расходов в этом месяце','');
-    let howMany = prompt('Во сколько обойдется?', '');
-
 
 let arrData = {
    budget: money,
    timeData: time,
-   expenses: {
-    costs: howMany, 
-   },
+   expenses: {},
    optionalExpenses: {},
    income: [],
    savings: false, 
 }
 
-alert (`Ваш бюджет за день - ${arrData.budget / 30}`);
+for( let i = 0; i < 2; i++ ){
+  let costs = +prompt('Введит обязательную статью расходов в этом месяце','');
+  let howMany = +prompt('Во сколько обойдется?', '');
+
+  if( typeof(costs) === 'string' && typeof(costs) != null &&
+   typeof(howMany) != null && costs != '' && howMany != '' && costs.length < 50 ){
+   appData.expenses[costs] = howMany; 
+  }
+};
+
+appData.moneyPerDay = arrData.budget / 30;
+
+alert (`Ваш бюджет за день - ${appData.moneyPerDay}`);
+
+if( appData.moneyPerDay < 100 ){
+    console.log( 'Минимальный уровень достатка' );
+}else if( appData.moneyPerDay > 100 && appData.moneyPerDay < 2000 ){
+  console.log('Средний уровень достатка');
+}else if( app.Data.moneyPerDay > 2000 ){
+    console.log( 'Высокий уровень достатка' );
+}else{
+    console.log( 'Произошла ошибка' );
+}
