@@ -2,7 +2,7 @@
     let money = +prompt('Ваш бюджет на месяц','');
     let time = prompt('YYYY-MM-DD','');
 
-let arrData = {
+let appData = {
    budget: money,
    timeData: time,
    expenses: {},
@@ -11,7 +11,7 @@ let arrData = {
    savings: false, 
 }
 
-for( let i = 0; i < 2; i++ ){
+ for( let i = 0; i < 2; i++ ){
   let costs = +prompt('Введит обязательную статью расходов в этом месяце','');
   let howMany = +prompt('Во сколько обойдется?', '');
 
@@ -19,9 +19,35 @@ for( let i = 0; i < 2; i++ ){
    typeof(howMany) != null && costs != '' && howMany != '' && costs.length < 50 ){
    appData.expenses[costs] = howMany; 
   }
-};
+}; 
 
-appData.moneyPerDay = arrData.budget / 30;
+// Напишу ещё 2 разних цикла для практики
+/* let i = 0;
+while( i < 2 ){
+    let costs = +prompt('Введит обязательную статью расходов в этом месяце','');
+    let howMany = +prompt('Во сколько обойдется?', '');
+
+    if( typeof(costs) === 'string' && typeof(costs) != null &&
+   typeof(howMany) != null && costs != '' && howMany != '' && costs.length < 50 ){
+   appData.expenses[costs] = howMany; 
+  }
+
+  i++;
+} */
+/* let i = 0;
+do{
+    let costs = +prompt('Введит обязательную статью расходов в этом месяце','');
+    let howMany = +prompt('Во сколько обойдется?', '');
+  
+    if( typeof(costs) === 'string' && typeof(costs) != null &&
+     typeof(howMany) != null && costs != '' && howMany != '' && costs.length < 50 ){
+     appData.expenses[costs] = howMany; 
+    }
+
+}while( i < 2 ); */
+
+
+appData.moneyPerDay = appData.budget / 30;
 
 alert (`Ваш бюджет за день - ${appData.moneyPerDay}`);
 
