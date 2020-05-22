@@ -1,4 +1,4 @@
-let money, time;
+let money, time, items;
 
 function start() {
     money = +prompt('Ваш бюджет на месяц', '');
@@ -60,16 +60,28 @@ let appData = {
     chooseOptExpenses: function () {
         for (let i = 1; i <= 3; i++) {
             let optExpense = +prompt('Статья необязательных расходов', '');
+            appData.optionalExpenses[i] = optExpense;
         }
-        appData.optionalExpenses[i] = optExpense;
+
     },
 
     chooseIncome: function () {
-        let items = prompt('Что принесет дополнительный доход? (Перечислить через запятую)', '');
+        items = prompt('Что принесет дополнительный доход? (Перечислить через запятую)', '');
+        while (!isNaN(items) || (items == '') || (items == null)) {
+            items = prompt('Что принесет дополнительный доход? (Перечислить через запятую)', '');
+        }
         appData.income = items.split(', ');
         appData.income.push(prompt('Может что-то ещё?'));
         appData.income.sort();
+
+
+        appData.income.forEach(item => alert(`Способы доп. заработка - ${item}`));
+
+        
     },
 
 };
 
+for (let inf in appData){
+    console.log(`Наша программа включает в себя данные ${inf}`);
+}
