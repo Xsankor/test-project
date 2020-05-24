@@ -85,3 +85,22 @@ let appData = {
 for (let inf in appData){
     console.log(`Наша программа включает в себя данные ${inf}`);
 }
+
+
+let startPayment = document.getElementById('start'),
+    budgetValue = document.getElementsByClassName('budget-value'),
+    dayBudget = document.getElementsByClassName('daybudget-value'),
+    levelValue = document.getElementsByClassName('level-value'),
+    expensesValue = document.getElementsByClassName('expenses-value'),
+    optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value'),
+    incomeValue = document.getElementsByClassName('income-value'),
+    monthSaving = document.getElementsByClassName('monthsavings-value'),
+    yearSaving = document.getElementsByClassName('yearsavings-value'),
+    expensesItem = document.getElementsByClassName('expenses-item'),
+    btnOptExp = document.getElementsByClassName('optionalexpenses-btn'),
+    btnExpItem = document.getElementsByClassName('expenses-item-btn'),
+    btnCountBuget = document.getElementsByClassName('count-budget-btn'),
+    optionalExpenses = document.querySelectorAll('.optionalexpenses-item');
+
+
+    
