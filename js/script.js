@@ -30,12 +30,8 @@ let appData = {
     optionalExpenses: {},
     income: [],
     savings: false,
+    moneyPerDay: 0,
 };
-
-
-
-
-
 
 startPayment.addEventListener('click', function () {
 
@@ -54,7 +50,8 @@ startPayment.addEventListener('click', function () {
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
 
-});
+
+    
 
 btnExpItem.addEventListener('click', function () {
     let sum = 0;
@@ -88,7 +85,15 @@ btnCountBuget.addEventListener('click', function () {
 
     if (appData.budget != undefined) {
 
-        appData.moneyPerDay = (appData.budget / 30).toFixed();
+        if( Object.keys(appData.expenses).length !== 0 ){
+            for( let prop in appData.expenses ){
+              appData.moneyPerDay += appData.budget - Number(appData.expenses[prop]);
+            }
+            appData.moneyPerDay =  (appData.moneyPerDay / 30).toFixed();
+        }else{
+            appData.moneyPerDay =  (appData.budget / 30).toFixed();
+        }
+       
         dayBudget.textContent = appData.moneyPerDay;
 
         if (appData.moneyPerDay < 100) {
@@ -106,7 +111,7 @@ btnCountBuget.addEventListener('click', function () {
 });
 
 
-incomeItem.addEventListener('change', function () {
+incomeItem.addEventListener('input', function () {
     items = incomeItem.value;
     while (!isNaN(items) || (items == '') || (items == null)) {
         items = incomeItem.value;
@@ -149,6 +154,8 @@ percentValue.addEventListener('input', function () {
         monthSaving.textContent = appData.monthIncome.toFixed(1);
         yearSaving.textContent = appData.yearIncome.toFixed(1);
     }
+});
+
 });
 
 
