@@ -1,3 +1,26 @@
+let startPayment = document.getElementById('start'),
+    budgetValue = document.getElementsByClassName('budget-value')[0],
+    dayBudget = document.getElementsByClassName('daybudget-value')[0],
+    levelValue = document.getElementsByClassName('level-value')[0],
+    expensesValue = document.getElementsByClassName('expenses-value')[0],
+    optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value')[0],
+    incomeValue = document.getElementsByClassName('income-value')[0],
+    monthSaving = document.getElementsByClassName('monthsavings-value')[0],
+    yearSaving = document.getElementsByClassName('yearsavings-value')[0],
+    expensesItem = document.getElementsByClassName('expenses-item'),
+    expensesBtn = document.getElementsByTagName('button')[0],
+    btnOptExp = document.getElementsByClassName('optionalexpenses-btn'),
+    btnExpItem = document.getElementsByClassName('expenses-item-btn'),
+    btnCountBuget = document.getElementsByClassName('count-budget-btn'),
+    optionalExpenses = document.querySelectorAll('.optionalexpenses-item'),
+    incomeItem = document.querySelector('.choose-income'),
+    checkSavings = document.querySelector('#savings'),
+    sumValue = document.querySelector('.choose-sum'),
+    percentValue = document.querySelector('.choose-percent');
+    yearValue = document.querySelector('.year-value'),
+    monthValue = document.querySelector('.month-value'),
+    dayValue = document.querySelector('.day-value');
+
 let money, time, items;
 
 function start() {
@@ -87,20 +110,7 @@ for (let inf in appData){
 }
 
 
-let startPayment = document.getElementById('start'),
-    budgetValue = document.getElementsByClassName('budget-value'),
-    dayBudget = document.getElementsByClassName('daybudget-value'),
-    levelValue = document.getElementsByClassName('level-value'),
-    expensesValue = document.getElementsByClassName('expenses-value'),
-    optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value'),
-    incomeValue = document.getElementsByClassName('income-value'),
-    monthSaving = document.getElementsByClassName('monthsavings-value'),
-    yearSaving = document.getElementsByClassName('yearsavings-value'),
-    expensesItem = document.getElementsByClassName('expenses-item'),
-    btnOptExp = document.getElementsByClassName('optionalexpenses-btn'),
-    btnExpItem = document.getElementsByClassName('expenses-item-btn'),
-    btnCountBuget = document.getElementsByClassName('count-budget-btn'),
-    optionalExpenses = document.querySelectorAll('.optionalexpenses-item');
+
 
 
     
